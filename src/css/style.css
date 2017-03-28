@@ -139,7 +139,7 @@ section.content{
     padding-top: 5vh;
 }
 
-img{
+.content img{
     height: 25vh;
     width: auto;
     padding-bottom: 5vh;

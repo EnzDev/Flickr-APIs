@@ -4,25 +4,30 @@
         <title>Projet JS - Flickr</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="src/css/reset.css" rel="stylesheet">
-        <link href="src/css/style.css" rel="stylesheet">
 
         <script src="https://use.fontawesome.com/d684560ae1.js"></script> <!-- Custom icons -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- JQuery 3 -->
 
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
         <script src="src/js/search.js"></script>
         <script src="src/js/slider.js"></script>
+        
+		<link href="src/css/reset.css" rel="stylesheet">
+        <link href="src/css/style.css" rel="stylesheet">
+		<link href="src/css/ui.css" rel="stylesheet">
     </head>
     <body>
         <nav> <!-- Search bar -->
             <div class="flex-container">
-                <div class="search">  <!-- No space for css reason -->
+                <form class="search">  <!-- No space for css reason -->
                     <input type="text" name="search" value="" placeholder="Recherche"><button type="button" aria-label="Search"><i class="fa fa-search" aria-hidden="true" title="Rechercher"></i></button>
-                </div>
+                </form>
                 <span class="space"></span>
                 <div class="slider">
-                    <input id="nombre" type="range" list="values" min="1" max="100" value="1" autocomplete="off"/>
-                    <span>1</span>
+                    <input id="nombre" type="range" list="values" min="1" max="100" value="25" autocomplete="off"/>
+                    <span>25</span>
                     <datalist id="values">
                         <option value="1">1</option>
                         <option value="10">10</option>
@@ -36,5 +41,8 @@
         <section class="content">
             
         </section>
+		<section class="zoom">
+			<img src="">
+		</section>
     </body>
 </html>
