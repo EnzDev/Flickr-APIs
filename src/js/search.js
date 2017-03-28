@@ -6,20 +6,6 @@ $(function(){ // OnInit
 		$("form button").click()
 	}
 
-	$( ".zoom" ).dialog({
-		autoOpen: false,
-		resizable: false,
-		modal: true,
-		draggable: false,
-		
-	});
-	        
-	$(function() {
-		$( ".zoom" ).dialog();
-		$(".ui-dialog-title").hide();
-		$(".ui-dialog-titlebar").removeClass('ui-widget-header');
-	});
-
     function zoom(){
         var id = $(this).attr("id")
         var secret = $(this).attr("secret")
@@ -31,8 +17,29 @@ $(function(){ // OnInit
 
         $.getJSON(url).done(function(d){
 			console.log(d)
-			$(".zoom img").attr("src", src)
-			$( ".zoom" ).dialog( "open" );
+
+            theImage = new Image()
+            
+            $(".zoom img").replaceWith( theImage )
+            $(".zoom .description").html( d.photo.description._content )
+            $(".zoom .tag").empty()
+            for([index, tag]  of d.photo.tags.tag.entries()){
+                console.log(index, tag._content, index<15)
+                if(index < 15){ 
+                    $(".zoom .tags").append( $('<span>').html(tag._content) ) 
+                }
+            
+            }
+
+
+            theImage.onload = function(){
+                $( ".zoom" ).dialog( "open" ) 
+                $(".ui-widget-overlay").click( function(){
+                    $(".ui-dialog-titlebar-close").click() 
+                }); 
+            }
+
+            theImage.src = src.substr(0, src.length-5)+"h.jpg"
         })
     }
 
@@ -41,7 +48,7 @@ $(function(){ // OnInit
         var url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key='+window.apiKey+
             '&tags=' + searchTerm+
             '&per_page=' + items +
-            '&format=json&nojsoncallback=1&safesearch=safe';
+            '&format=json&nojsoncallback=1&safesearch=1';
 
         $.getJSON(url).done(function(data){ // Request for the photos urls
             if(data.stat == "ok"){ // If our request success add all the photos
@@ -56,10 +63,13 @@ $(function(){ // OnInit
         })
     }
 
-    $(".search button").click(function(){
+    function update(){
         search(
             $(".search input").val(), 
             $(".slider input").val()
             )
-    })
+    }
+
+    $(".search button").click(update)
+    $('.slider input').on('change',update)
 })

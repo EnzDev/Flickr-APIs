@@ -1,0 +1,41 @@
+.ui-dialog .ui-dialog-titlebar {
+    padding: 0;
+}
+
+.ui-button {
+    margin: 0 !important;
+    z-index: 102;
+}
+
+.ui-dialog {
+    height: 85vh !important;
+    width: 85vw !important;
+    top:  7.5vh !important;
+    left: 7.5vw !important;
+
+    background: var(--dark-color) !important;
+    border-color: var(--contrast-color1) !important;
+}
+
+.ui-widget-overlay {
+    background: repeating-linear-gradient( -45deg, #000, #000 20px, #555 20px, #555 40px );
+}
+
+.zoom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    flex-direction: row;
+    height: 98% !important;
+    flex-wrap: wrap;
+}
+
+.zoom img {
+    /* max-width: 80vw; */
+    max-height: 65vh;
+}
+
+.infos {
+    width: 80vw;
+}
