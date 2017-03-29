@@ -39,3 +39,17 @@
 .infos {
     width: 80vw;
 }
+
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.tags span:last-child {
+	    margin-right: auto;
+}
+
+.tags span {
+	    padding-right: 1rem !important;
+}
