@@ -55,7 +55,7 @@ $(function(){ // OnInit
                 $(".content").empty();
                 for(p of data.photos.photo){
                     src = 'http://farm'+p.farm+'.staticflickr.com/'+p.server+'/'+p.id+'_'+p.secret+'_b.jpg';
-                    imgStr = '<img src="'+src+'" alt="'+p.title+' secret="'+p.secret+' id="'+p.id+'">'
+                    imgStr = '<img src="'+src+'" alt="'+p.title+'" secret="'+p.secret+'" id="'+p.id+'">'
                     $(".content").append(imgStr)
                     $("#"+p.id).click(zoom)
                 }
