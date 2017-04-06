@@ -46,7 +46,7 @@ $(function(){ // OnInit
     function search(searchTerm, items){
 
         var url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key='+window.apiKey+
-            '&tags=' + searchTerm+
+            '&tags=' + encodeURIComponent(searchTerm)+
             '&per_page=' + items +
             '&format=json&nojsoncallback=1&safesearch=1';
 
