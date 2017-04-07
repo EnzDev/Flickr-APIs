@@ -6,6 +6,7 @@
     --contrast-color2: #d3002d;
 }
 
+
 /* SEARCH BAR */
 nav{
     display: flex;
@@ -161,4 +162,9 @@ section.content{
     padding-bottom: 5vh;
     padding-left: 2.4vh;
     padding-right: 2.4vh;
+	transition: all 0.2s ease;
+}
+
+.content img:hover{
+	transform: scale(1.05);
 }
