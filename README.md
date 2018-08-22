@@ -1,7 +1,7 @@
 # Flickr-APIs
 A crappy Flickr explorer using their API!
 
-> **his was a school project to get my hand into JavaScript. This does not reflect my current ECMA skills.**
+> **This was a school project to get my hand into JavaScript. This does not reflect my current ECMA skills.**
 
 Hey! Sadly you saw that GitHub repository.
 
